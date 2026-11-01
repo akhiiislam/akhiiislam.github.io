@@ -1,0 +1,146 @@
+/* Afroza Islam portfolio: minimal editorial style */
+:root {
+  --bg: #fbfbf9;
+  --fg: #1b1f1d;
+  --muted: #5d645f;
+  --line: #e3e4df;
+  --card: #f3f3ef;
+  --accent: #1b1f1d;
+  --on-accent: #fbfbf9;
+  --link: #1f5d50;
+  --radius: 999px;
+  --maxw: 780px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #111412;
+  --fg: #ecefec;
+  --muted: #9aa39d;
+  --line: #262b28;
+  --card: #181c1a;
+  --accent: #ecefec;
+  --on-accent: #111412;
+  --link: #7fd1bd;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 4px; }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--on-accent); padding: 8px 14px; border-radius: 8px; z-index: 20; }
+.skip:focus { left: 12px; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- header ---------- */
+header.site {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+header.site .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 62px; max-width: 1040px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 18px; }
+.brand svg { width: 26px; height: 26px; }
+nav { display: flex; align-items: center; gap: 26px; font-size: 15px; }
+nav a { text-decoration: none; color: var(--muted); }
+nav a:hover { color: var(--fg); }
+nav a.pill {
+  color: var(--fg); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 8px 20px; font-weight: 500;
+}
+nav a.pill:hover { border-color: var(--fg); }
+.toggle {
+  background: none; border: 0; cursor: pointer; color: var(--muted);
+  width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%;
+}
+.toggle:hover { color: var(--fg); }
+.toggle svg { width: 20px; height: 20px; }
+.toggle .sun { display: none; }
+:root[data-theme="dark"] .toggle .sun { display: block; }
+:root[data-theme="dark"] .toggle .moon { display: none; }
+
+/* ---------- hero ---------- */
+.hero { padding: 84px 0 40px; }
+.eyebrow { color: var(--muted); font-size: 15px; margin: 0 0 22px; }
+h1 { font-weight: 400; font-size: clamp(34px, 6vw, 50px); line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 30px; max-width: 14em; }
+.hero p { margin: 0 0 18px; max-width: 34em; font-size: 19px; color: var(--fg); }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; margin: 34px 0 0; }
+.btn {
+  display: inline-block; text-decoration: none; font-size: 15px; font-weight: 500;
+  padding: 14px 24px; border-radius: var(--radius); border: 1px solid var(--line);
+}
+.btn.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.btn:hover { border-color: var(--fg); }
+
+.facts { margin: 56px 0 0; border-top: 1px solid var(--line); }
+.facts div { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.facts dt { font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 2px 0 0; }
+
+/* ---------- sections ---------- */
+section { padding: 72px 0 8px; border-top: 1px solid var(--line); margin-top: 56px; }
+.label { font-size: 12.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h2 { font-weight: 400; font-size: clamp(24px, 4vw, 31px); line-height: 1.25; letter-spacing: -0.01em; margin: 0 0 36px; max-width: 22em; }
+
+.list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.list li { border-bottom: 1px solid var(--line); }
+.row {
+  display: grid; grid-template-columns: 230px 1fr; gap: 8px 28px;
+  padding: 22px 0; text-decoration: none; color: inherit;
+}
+a.row:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
+.meta { color: var(--muted); font-size: 15px; line-height: 1.5; }
+.meta span { display: block; }
+.row h3 { font-weight: 400; font-size: 21px; line-height: 1.3; margin: 0 0 4px; }
+.row p { margin: 0; color: var(--muted); font-size: 16px; }
+.arrow { color: var(--muted); margin-left: 6px; }
+
+.pubs h3.group { font-size: 13px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 34px 0 10px; }
+.pubs ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.pubs li { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.pubs .t { display: block; font-size: 18px; line-height: 1.4; }
+.pubs .v { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+.pubs a.doi { color: var(--link); font-size: 15px; text-underline-offset: 3px; }
+.tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 1px 9px; border-radius: var(--radius); border: 1px solid var(--line); color: var(--muted); margin-left: 8px; vertical-align: 2px; background: var(--card); }
+
+.about p { max-width: 36em; margin: 0 0 18px; }
+.about ul { padding-left: 1.2em; margin: 8px 0 18px; color: var(--muted); }
+.about ul li { margin: 4px 0; }
+
+.contact p { max-width: 34em; margin: 0 0 24px; }
+.links { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.links li { border-bottom: 1px solid var(--line); }
+.links a { display: flex; justify-content: space-between; padding: 16px 0; text-decoration: none; }
+.links a:hover span:first-child { text-decoration: underline; text-underline-offset: 4px; }
+.links .where { color: var(--muted); }
+
+footer { margin-top: 88px; border-top: 1px solid var(--line); padding: 28px 0 56px; color: var(--muted); font-size: 14px; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 700px) {
+  body { font-size: 16.5px; }
+  .hero { padding-top: 56px; }
+  .row { grid-template-columns: 1fr; gap: 2px; padding: 18px 0; }
+  nav a:not(.pill) { display: none; }
+  nav { gap: 10px; }
+  section { padding-top: 56px; margin-top: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
