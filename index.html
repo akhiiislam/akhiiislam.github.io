@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="styles.css">
   <script>
     // Apply the saved theme before first paint to avoid a flash.
+    document.documentElement.classList.add('js');
     (function () {
       try {
         var t = localStorage.getItem('theme');
@@ -27,6 +28,8 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
 
   <header class="site">
     <div class="wrap">
@@ -52,7 +55,7 @@
       <!-- ===== Hero ===== -->
       <div class="hero">
         <p class="eyebrow">Lecturer and AI researcher &middot; Bangladesh</p>
-        <h1>I build AI for healthcare, and I test whether it can be trusted.</h1>
+        <h1 aria-label="I build AI for healthcare, and I test whether it can be trusted.">I build AI for healthcare, and I test whether it can be <span class="rot" id="rot" aria-hidden="true">trusted</span>.</h1>
         <p>I am a Lecturer in Computer Science &amp; Engineering at Varendra University and an M.Sc. candidate at RUET, where my CGPA is 3.88/4.00. I chose Mechatronics Engineering to connect hardware with software, and I moved into AI because I enjoy learning how machines learn.</p>
         <p>My work centers on medical imaging models, ClinicaRAG, a clinical-guideline assistant that checks every generated claim against its source, and IoT-based patient monitoring and fault detection.</p>
         <div class="btns">
@@ -64,6 +67,11 @@
           <div><dt>Before</dt><dd>B.Sc. in Mechatronics Engineering, RUET (Provost Gold Medal)</dd></div>
           <div><dt>Focus</dt><dd>Trustworthy AI for healthcare: evaluation, calibration, grounded LLMs</dd></div>
         </dl>
+        <div class="stats">
+          <div class="stat"><b><span class="count" data-to="3.88" data-dec="2">3.88</span></b><span>M.Sc. CGPA (out of 4.00)</span></div>
+          <div class="stat"><b><span class="count" data-to="10" data-dec="0">10</span></b><span>Papers and manuscripts</span></div>
+          <div class="stat"><b><span class="count" data-to="3" data-dec="0">3</span></b><span>Papers with a DOI</span></div>
+        </div>
       </div>
 
       <!-- ===== Work ===== -->
